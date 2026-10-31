@@ -1,0 +1,402 @@
+<title>snakk build log</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a narrow lab-notebook column of dated entries, with the milestone track as a strip on top
+   and the way-we-work card beside it on wide screens. Entry types are marked with the app's own blob gradients. */
+:root {
+  --ground: #f3f4f7;
+  --sheet: #ffffff;
+  --ink: #17181c;
+  --ink-soft: #5b5e69;
+  --rule: #dcdee5;
+  --accent: #d2492a;
+  --blob-milestone-a: #ff6b4a; --blob-milestone-b: #ffc152;
+  --blob-decision-a: #3f6df2; --blob-decision-b: #8fdcff;
+  --blob-proposal-a: #a64cf2; --blob-proposal-b: #ff8fd8;
+  --blob-note-a: #12b08c; --blob-note-b: #c4f05a;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Helvetica Neue", sans-serif;
+  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #121317; --sheet: #1b1c21; --ink: #ecebe6; --ink-soft: #a3a3ab; --rule: #2c2e36; --accent: #ff7a57;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #121317; --sheet: #1b1c21; --ink: #ecebe6; --ink-soft: #a3a3ab; --rule: #2c2e36; --accent: #ff7a57;
+  color-scheme: dark;
+}
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 16px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 32px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+.masthead { display: grid; gap: 10px; }
+.masthead h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+.masthead h1 span { color: var(--ink-soft); font-weight: 500; }
+.masthead p { margin: 0; max-width: 62ch; color: var(--ink-soft); font-size: 1.05rem; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font: 500 12px/1.4 var(--font-mono); color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+.meta b { color: var(--accent); font-weight: 500; }
+
+.track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+.ms { background: var(--sheet); padding: 14px 14px 16px; display: grid; grid-template-columns: auto 1fr; grid-template-areas: "dot id" "title title" "status status" "detail detail"; gap: 4px 8px; align-content: start; min-width: 0; }
+.ms-dot { grid-area: dot; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ink-soft); align-self: center; }
+.ms-done .ms-dot { border: 0; background: radial-gradient(circle at 35% 30%, var(--blob-milestone-b), var(--blob-milestone-a)); }
+.ms-partial .ms-dot { border-color: var(--blob-milestone-a); background: linear-gradient(90deg, var(--blob-milestone-a) 50%, transparent 50%); }
+.ms-id { grid-area: id; font: 500 12px/1 var(--font-mono); color: var(--ink-soft); align-self: center; }
+.ms-title { grid-area: title; font: 600 15px/1.3 var(--font-body); }
+.ms-status { grid-area: status; font: 500 11px/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.ms-done .ms-status { color: var(--ink); }
+.ms-detail { grid-area: detail; font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
+
+.columns { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; }
+@media (max-width: 860px) { .columns { grid-template-columns: minmax(0, 1fr); } .aside { order: -1; } }
+.log { display: grid; gap: 20px; min-width: 0; }
+.log > h2, .aside h2 { font: 500 12px/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+
+.day { margin: 28px 0 -2px; padding-top: 14px; border-top: 1px solid var(--rule); font: 500 12px/1 var(--font-mono); letter-spacing: 0.06em; color: var(--ink-soft); display: flex; gap: 10px; align-items: baseline; }
+.day span { font-size: 17px; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.08em; }
+.entry { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px 24px 20px; display: grid; gap: 12px; min-width: 0; }
+.entry-proposal { border-color: color-mix(in srgb, var(--blob-proposal-a) 45%, var(--rule)); }
+.entry-head { display: flex; align-items: center; gap: 10px; font: 500 12px/1 var(--font-mono); color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+.entry-head time { margin-left: auto; text-transform: none; letter-spacing: 0; }
+.orb { width: 18px; height: 18px; border-radius: 50%; flex: none; }
+.orb-milestone { background: radial-gradient(circle at 35% 30%, var(--blob-milestone-b), var(--blob-milestone-a) 70%); }
+.orb-decision { background: radial-gradient(circle at 35% 30%, var(--blob-decision-b), var(--blob-decision-a) 70%); }
+.orb-proposal { background: radial-gradient(circle at 35% 30%, var(--blob-proposal-b), var(--blob-proposal-a) 70%); }
+.orb-note { background: radial-gradient(circle at 35% 30%, var(--blob-note-b), var(--blob-note-a) 70%); }
+.entry-proposal .type { color: var(--blob-proposal-a); }
+.entry h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; }
+.entry p { margin: 0; max-width: 68ch; }
+.entry strong { font-weight: 600; }
+.adr { margin: 0; display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 8px 16px; }
+.adr dt { font: 500 12px/1.9 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.adr dd { margin: 0; }
+.adr ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+@media (max-width: 520px) { .adr { grid-template-columns: minmax(0, 1fr); gap: 2px; } .adr dd { margin-bottom: 8px; } .entry { padding: 18px 16px; } }
+.metrics { border-collapse: collapse; width: 100%; font-size: 14px; }
+.metrics th, .metrics td { text-align: left; padding: 8px 0; border-top: 1px solid var(--rule); vertical-align: top; }
+.metrics th { font-weight: 400; color: var(--ink-soft); padding-right: 16px; }
+.metrics td { font: 500 14px/1.5 var(--font-mono); font-variant-numeric: tabular-nums; }
+figure { margin: 4px 0 0; display: grid; gap: 8px; }
+figure img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--rule); background: var(--ground); display: block; }
+figcaption { font-size: 13px; color: var(--ink-soft); }
+.diagram { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; padding: 12px; }
+.diagram pre { margin: 0; }
+.comment { justify-self: start; font: 500 13px/1 var(--font-body); color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+.comment:hover { border-color: var(--ink-soft); }
+.comment:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.aside { display: grid; gap: 16px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); min-width: 0; }
+@media (max-width: 860px) { .aside { position: static; } }
+.card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; display: grid; gap: 12px; }
+.card p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+.card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.card li { display: grid; gap: 2px; font-size: 14px; }
+.card code { font: 500 13px/1.4 var(--font-mono); color: var(--accent); }
+.legend li { grid-template-columns: 18px 1fr; align-items: center; gap: 10px; }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <h1>snakk <span>build log</span></h1>
+    <p>A live map of a lecture. Speech is transcribed on the Mac, Claude sorts it into topics at each pause, and one engine feeds several ways of drawing them: 3D blobs, or a chalkboard.</p>
+    <div class="meta"><span>Updated 31 Oct 2026</span><span>14 entries</span><span><b>1 open proposal</b></span><span>Repo: ~/dev/snakk</span></div>
+  </header>
+
+  <ol class="track" aria-label="Milestones">
+      <li class="ms ms-done">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M0</span>
+        <span class="ms-title">Scaffold</span>
+        <span class="ms-status">Done</span>
+        <span class="ms-detail">Vite + React + react-three-fiber, Hono API server, whisper-server managed by the API, CLAUDE.md, project skills, this build log.</span>
+      </li>
+      <li class="ms ms-done">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M1</span>
+        <span class="ms-title">Local transcription</span>
+        <span class="ms-status">Done</span>
+        <span class="ms-detail">Silero voice detection in the browser, utterances to whisper.cpp large-v3-turbo on Metal, interim captions, language badge, session recorder.</span>
+      </li>
+      <li class="ms ms-done">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M2</span>
+        <span class="ms-title">Topic engine</span>
+        <span class="ms-status">Done</span>
+        <span class="ms-detail">Categorizer endpoint (claude -p, API or offline), pure reducer with guardrails, debug drawer, replay and typed input.</span>
+      </li>
+      <li class="ms ms-done">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M3</span>
+        <span class="ms-title">Scene v1</span>
+        <span class="ms-status">Done</span>
+        <span class="ms-detail">Blob per topic, keyword bubbles rising and merging, sub-topic links, column layout with soft repulsion.</span>
+      </li>
+      <li class="ms ms-partial">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M4</span>
+        <span class="ms-title">Scene v2</span>
+        <span class="ms-status">In progress</span>
+        <span class="ms-detail">Done: keywords on the blob texture, bloom, per-section colour, presenter mode, 30 motion options tested on a 5-minute lecture, Tor's picks merged as the default. Open: remove the unused options.</span>
+      </li>
+      <li class="ms ms-partial">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M5</span>
+        <span class="ms-title">Hardening</span>
+        <span class="ms-status">In progress</span>
+        <span class="ms-detail">Done: pause-length and caption settings, vocabulary hint, WhisperKit adapter (untested). Open: 45-minute test lecture, Ollama provider.</span>
+      </li>
+      <li class="ms ms-partial">
+        <span class="ms-dot" aria-hidden="true"></span>
+        <span class="ms-id">M6</span>
+        <span class="ms-title">More visualizations</span>
+        <span class="ms-status">In progress</span>
+        <span class="ms-detail">Done: engine split from drawing, view switcher, chalkboard first draft. Open: Tor's direction on the chalkboard.</span>
+      </li>
+  </ol>
+
+  <div class="columns">
+    <main class="log">
+      <h2>Entries, newest first</h2>
+      <h3 class="day" id="day-2"><span>Day 2</span> 31 Oct 2026</h3>
+      <article class="entry entry-milestone" id="2026-10-31-chalkboard-v1" data-comment-target><header class="entry-head">
+      <span class="orb orb-milestone" aria-hidden="true"></span>
+      <span class="type">Milestone</span>
+      <time datetime="2026-10-31">31 Oct 2026</time>
+    </header>
+    <h3>Chalkboard, first draft</h3>
+    <p>A 2D board in chalk. Each section is circled in its own colour of chalk with its keywords written underneath; sub-topics hang off it on a short arrow; arrows between sections trace the path of the talk, and a return to an earlier section is drawn in yellow (the lecture's return to magnetism at 3:35 shows up as one).</p>
+    <p>It is written the way a teacher writes: three sections to a row, the next row running back the other way so the arrow never crosses the board, and <strong>nothing written ever moves</strong>. Circles and arrows trace themselves on, words appear left to right, and the section being talked about is circled a second time and underlined while the others step back. Once the board is too full to read at once, the view eases along to follow the current section.</p>
+    <p>The chalk look is one SVG filter (grain plus ragged edges) over hand-drawn paths: ellipses that wander and overshoot their start, slightly tilted handwriting in Caveat (bundled, so it works offline).</p>
+    <p>Checked on the recorded lecture at 2:52 and at the end, in headless Chrome. <strong>Open:</strong> this is a first draft to react to. Arrows for long jumps (e.g. magnetism to the last row) still cut across keyword lists, and the follow view can tuck the top row under the top bar outside presenter mode.</p>
+    <table class="metrics"><tbody><tr><th scope="row">Sections on the lecture board</th><td>10, in 4 rows</td></tr><tr><th scope="row">Keywords per section</th><td>up to 10, then &quot;+n more&quot;</td></tr><tr><th scope="row">New dependency</th><td>@fontsource-variable/caveat</td></tr></tbody></table>
+    <figure><img src="img/2026-10-31-chalkboard-midway.jpg" alt="Chalkboard at 2:52 of the lecture: five sections circled in coloured chalk with keywords listed below, a sub-topic hanging off the introduction, and arrows tracing the talk from section to section." loading="lazy"><figcaption>Chalkboard at 2:52 of the lecture: five sections circled in coloured chalk with keywords listed below, a sub-topic hanging off the introduction, and arrows tracing the talk from section to section.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-31-chalkboard-v1" data-entry="2026-10-31-chalkboard-v1" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-31-engine-and-views" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-31">31 Oct 2026</time>
+    </header>
+    <h3>One engine, many ways to draw it</h3>
+    <dl class="adr"><dt>Context</dt><dd>Tor wants to try other visual techniques than the 3D blobs, starting with a 2D chalkboard, without rebuilding transcription and categorization each time. The code already kept most logic apart from the scene, but the shared state spoke in bubble terms (bubbles, pulses) and nothing stopped a view from reaching into engine internals.</dd>
+    <dt>Choice</dt><dd><strong>src/engine/</strong> holds everything that is not drawing (speech, topic engine and reducer, session and replay, store, selectors) behind one public file, src/engine/index.ts. <strong>src/visuals/</strong> has one folder per visualization, each registered in registry.ts against a small contract: a full-screen component, loaded on demand, that reads the engine and at most lands keywords. <strong>src/ui/</strong> is the shell (top bar, captions, controls) shared by all views.</dd>
+    <dt>Considered</dt><dd><ul><li>Separate packages in a monorepo: cleaner on paper, but more ceremony than two views need today.</li><li>A visualization flag inside the 3D scene: would keep three.js loaded for a 2D board and blur the boundary.</li></ul></dd>
+    <dt>Consequences</dt><dd>Pick a view with the new switcher in the top bar, the <strong>V</strong> key, or ?viz=chalkboard; the choice is remembered per browser and views can be switched mid-lecture. The engine now records a <strong>trail</strong> of where the talk went, and selectors (talkView, sectionHops) give every view the same reading of it; the chalkboard draws its arrows from them. Neutral names replace the bubble terms (pendingKeywords, landKeyword, landedAt). Views that do not animate keywords let the shell land them on schedule. A new architecture test fails if the engine imports rendering code or a view reaches past the engine's index; it caught one such import on its first run. Capture tooling moved into the repo (npm run capture, output in a git-ignored captures/), and .gitignore now also covers local Claude settings and editor folders.</dd>
+    </dl>
+    <table class="metrics"><tbody><tr><th scope="row">Tests</th><td>34 passing (8 new: trail, selectors, board layout, architecture)</td></tr><tr><th scope="row">Typecheck</th><td>clean</td></tr><tr><th scope="row">Switch check</th><td>chalkboard to bubbles mid-replay, no console errors</td></tr></tbody></table>
+    <div class="diagram"><pre class="mermaid">flowchart LR
+  mic[Microphone] --&gt; stt[engine/transcript\nVAD + whisper.cpp]
+  stt --&gt; te[engine/topics\nTopicEngine + reducer]
+  te &lt;--&gt; claude[server: claude -p\nSonnet 5.5]
+  te --&gt; store[(engine/store\n+ selectors)]
+  store --&gt; bub[visuals/bubbles\n3D, three.js]
+  store --&gt; chalk[visuals/chalkboard\n2D, SVG]
+  store --&gt; ui[ui shell\ncaptions, controls, switcher]</pre></div>
+    <figure><img src="img/2026-10-31-two-views.jpg" alt="The same moment of the lecture in both views, switched live with the new Bubbles / Chalkboard toggle in the top bar." loading="lazy"><figcaption>The same moment of the lecture in both views, switched live with the new Bubbles / Chalkboard toggle in the top bar.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-31-engine-and-views" data-entry="2026-10-31-engine-and-views" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-31-merged-look" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-31">31 Oct 2026</time>
+    </header>
+    <h3>Tor's motion picks are now the default</h3>
+    <dl class="adr"><dt>Context</dt><dd>Tor picked one of the options for each of the ten moments on the motion-studies page. Played together on the full lecture, the picks worked, but once about ten sections sat around the stage ring their titles collided and one ran off the right edge.</dd>
+    <dt>Choice</dt><dd>Default look (DEFAULT_LOOK in src/scene/look.ts): stage layout, wandering idle drift, keywords born near their topic, spiral flight, a nudge on arrival, new sub-topics budding off the current one, finished sub-topics fused on as lobes, a slower scene during pauses, other sections receding, typewriter titles.</dd>
+    <dt>Consequences</dt><dd>Ring positions now make room for each section's title: blob and title are treated as one box, the section on stage stays put and the others slide aside (sideways when there is no room above or below). Titles of the sections waiting around the ring shrink smoothly to three quarters of full size, so the current topic reads first. Recorded the whole lecture again with no URL options: every title on screen, none overlapping. The other options still work through ?look= for comparison. <strong>Open:</strong> remove the unused options once Tor has lived with the merged look.</dd>
+    </dl>
+    <table class="metrics"><tbody><tr><th scope="row">Tests</th><td>24 passing (1 new)</td></tr><tr><th scope="row">New guardrail</th><td>10 real titles, every section on stage in turn: no overlap, nothing off screen</td></tr><tr><th scope="row">Run checked</th><td>full 5.5-min lecture, 9 stills</td></tr></tbody></table>
+    <figure><img src="img/2026-10-31-merged-look.jpg" alt="End of the northern-lights lecture with the merged look: Summary large in the middle, nine sections around it, every title on screen and none overlapping." loading="lazy"><figcaption>End of the northern-lights lecture with the merged look: Summary large in the middle, nine sections around it, every title on screen and none overlapping.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-31-merged-look" data-entry="2026-10-31-merged-look" hidden>Comment on this</button></article>
+      <h3 class="day" id="day-1"><span>Day 1</span> 30 Oct 2026</h3>
+      <article class="entry entry-milestone" id="2026-10-30-motion-studies" data-comment-target><header class="entry-head">
+      <span class="orb orb-milestone" aria-hidden="true"></span>
+      <span class="type">Milestone</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Motion studies: ten moments, three options each</h3>
+    <p>Recorded a 5.5-minute lecture on the northern lights through the real categorizer (fixtures/sessions/lecture-northern-lights-claude-sonnet-5-5.json, also replayed by the fixture tests). Categorization held up: 9 sections, 2 sub-topics, and the return to magnetism at 3:35 reused the existing section.</p>
+    <p>The scene did not: by the end it is a row of nine equal marbles with colliding titles, an empty middle, keywords born on top of the captions, identical flight arcs, and a glow on the current topic too faint to notice.</p>
+    <p>Added <strong>?look=dimension:option</strong> variants for ten moments (layout, idle motion, keyword birth, flight, arrival, new topic, finished sub-topic, voice, focus, titles), three options each, default unchanged. Replays can now seek (<strong>fromMs</strong>), so every option was captured at the same lecture second: 35 headless runs, stills, a clip and a motion-trail composite each. Picks go through the motion-studies artifact: https://claude.ai/artifact/VjWR8di4pinatyncNLuke9</p>
+    <p>Organic layouts now size sections by their share of the talk instead of all hitting the column cap. Tor's picks were merged on 2026-10-31 (next entry).</p>
+    <table class="metrics"><tbody><tr><th scope="row">Lecture</th><td>5:30, 38 sentences</td></tr><tr><th scope="row">Categorizer calls</th><td>38, median 3.6 s</td></tr><tr><th scope="row">Options captured</th><td>30 + 5 references</td></tr><tr><th scope="row">Tests</th><td>23 passing</td></tr></tbody></table>
+    <figure><img src="img/2026-10-30-layout-studies.jpg" alt="Four layouts at 5:22 of the lecture: today’s single row, a scattered constellation, a loose ring, and centre stage with the current section large in the middle." loading="lazy"><figcaption>Four layouts at 5:22 of the lecture: today’s single row, a scattered constellation, a loose ring, and centre stage with the current section large in the middle.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-motion-studies" data-entry="2026-10-30-motion-studies" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-30-droplets" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Sub-topics drip into their section, then melt in</h3>
+    <dl class="adr"><dt>Context</dt><dd>You were not happy with the necks between sub-topics and sections. I proposed four directions: a droplet stream with absorption, orbiting moons, a soap-bubble cluster, and light threads.</dd>
+    <dt>Choice</dt><dd>Droplet stream, then absorb. Only the sub-topic being talked about floats below its section, and separate droplets bud off it and rise into the section. When you move on, it drifts up and melts in, leaving a light band on the section like a gas giant's stripe, and its keywords join the section's surface.</dd>
+    <dt>Considered</dt><dd><ul><li>Orbiting moons on a faint ring.</li><li>Soap-bubble cluster with flat shared walls.</li><li>Glowing threads with particles flowing up.</li></ul></dd>
+    <dt>Consequences</dt><dd>Earlier sub-topics are no longer separate blobs; the debug drawer still lists the full tree. A section shows up to 7 bands. Checked with a replay of the demo session, during an active sub-topic and after absorption.</dd>
+    </dl>
+    <figure><img src="img/2026-10-30-droplets-active.jpg" alt="Introduction with a light band from the absorbed Academic Background; Current Job floats below it while small droplets rise and melt into the section." loading="lazy"><figcaption>Introduction with a light band from the absorbed Academic Background; Current Job floats below it while small droplets rise and melt into the section.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-droplets" data-entry="2026-10-30-droplets" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-30-unified-surface" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Each section and its sub-topics are now one seamless surface</h3>
+    <dl class="adr"><dt>Context</dt><dd>Your feedback on the gooey necks: there was a visible crease where each neck met a blob. You asked for a unified mesh.</dd>
+    <dt>Choice</dt><dd>Separate meshes always crease where they intersect, so each section group is now ray-marched as a signed distance field. The blobs and the swaying necks are combined with a smooth union, so they melt into each other like metaballs. Colour and keyword ink are blended with the same weights, so they flow through the joins.</dd>
+    <dt>Considered</dt><dd><ul><li>Marching-cubes metaballs: seamless, but rebuilt on the CPU every frame at low resolution, and keywords cannot sit on the surface.</li><li>Hiding the crease with matching colours: cheaper, but the crease stays visible in the highlights.</li></ul></dd>
+    <dt>Consequences</dt><dd>All blobs, including sections without sub-topics, are drawn by one shader per section group. Up to 7 sub-topics per section are drawn; more are dropped from the surface. The pixel ratio is capped at 1.5 to keep the ray marching smooth.</dd>
+    </dl>
+    <figure><img src="img/2026-10-30-unified-surface.jpg" alt="Introduction drawn as one continuous orange shape: the section blob flows through two necks into Academic Background and Current Job, keywords wrapped on each part." loading="lazy"><figcaption>Introduction drawn as one continuous orange shape: the section blob flows through two necks into Academic Background and Current Job, keywords wrapped on each part.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-unified-surface" data-entry="2026-10-30-unified-surface" hidden>Comment on this</button></article>
+      <article class="entry entry-note" id="2026-10-30-goo-links" data-comment-target><header class="entry-head">
+      <span class="orb orb-note" aria-hidden="true"></span>
+      <span class="type">Note</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Sub-topics now hang from their section by a gooey neck</h3>
+    <p>Your feedback: the dashed line should be a gradient curve so the blobs flow together, like two drops pulling apart.</p>
+    <p>The line is replaced by a tube that grows out of both blobs, narrows in the middle, sways in a slow S-curve and fades from the sub-topic's colour to the section's. Checked with a replay of the demo session.</p>
+    <figure><img src="img/2026-10-30-goo-links.jpg" alt="Introduction blob with two flowing necks down to Academic Background and Current Job, coloured from the section's orange to the sub-topics' peach." loading="lazy"><figcaption>Introduction blob with two flowing necks down to Academic Background and Current Job, coloured from the section's orange to the sub-topics' peach.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-goo-links" data-entry="2026-10-30-goo-links" hidden>Comment on this</button></article>
+      <article class="entry entry-proposal" id="2026-10-30-proposals" data-comment-target><header class="entry-head">
+      <span class="orb orb-proposal" aria-hidden="true"></span>
+      <span class="type">Needs your call</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Open questions for the next session</h3>
+    <p>These need your call before the next milestone. Comment on any of them.</p>
+    <p><strong>Real-talk calibration.</strong> The pause that ends an utterance is 800 ms and a call fires at 8 words. Both were tuned on synthetic speech. I propose you record a 10-minute talk with Save, and we tune against that file using Replay without spending your voice again. Recommended as the next step.</p>
+    <p><strong>Speed of the categorizer.</strong> Sonnet 5.5 through claude -p takes about 3.5 s per pause. Haiku 5.5 would be roughly twice as fast with weaker judgement on topic changes. I would stay on Sonnet until a real talk shows the lag matters.</p>
+    <p><strong>Committing.</strong> Nothing is committed yet. I propose one initial commit on a branch, then a commit per milestone, with the build log linking each one.</p>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-proposals" data-entry="2026-10-30-proposals" hidden>Comment on this</button></article>
+      <article class="entry entry-milestone" id="2026-10-30-m0-m3" data-comment-target><header class="entry-head">
+      <span class="orb orb-milestone" aria-hidden="true"></span>
+      <span class="type">Milestone</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>First end-to-end pipeline: microphone to blobs</h3>
+    <p>M0 to M3 are in place and verified in Chrome. The Demo button plays a scripted version of your intro. Claude made an Introduction section with Academic Background and Current Job beneath it, then two big topics.</p>
+    <p>A live run fed a Norwegian and English recording through the real microphone path. Voice detection cut three utterances. Whisper detected the language switch by itself, and Claude titled the sections in the language spoken.</p>
+    <p>18 tests pass: the reducer, the topic engine's timing rules, the layout, the WAV encoder, language mapping, and a replay of real Claude output from the demo.</p>
+    <p>Replay was checked through the Replay button: the recorded Claude output rebuilds the same tree with no API calls. The screenshot is that replay.</p>
+    <table class="metrics"><tbody><tr><th scope="row">Final transcript after a pause</th><td>1.4 to 2.1 s</td></tr><tr><th scope="row">Claude categorization (claude -p, Sonnet 5.5, low effort)</th><td>3.3 to 3.6 s</td></tr><tr><th scope="row">Whisper model</th><td>large-v3-turbo q5_0, 574 MB</td></tr></tbody></table>
+    <figure><img src="img/2026-10-30-replay-layout.jpg" alt="Replay of the recorded demo session: Introduction with Academic Background and Current Job, LLMs Changing Software, and Local Speech Recognition, keywords wrapped on each blob." loading="lazy"><figcaption>Replay of the recorded demo session: Introduction with Academic Background and Current Job, LLMs Changing Software, and Local Speech Recognition, keywords wrapped on each blob.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-m0-m3" data-entry="2026-10-30-m0-m3" hidden>Comment on this</button></article>
+      <article class="entry entry-note" id="2026-10-30-live" data-comment-target><header class="entry-head">
+      <span class="orb orb-note" aria-hidden="true"></span>
+      <span class="type">Note</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Live microphone test in Norwegian and English</h3>
+    <p>The interim caption first read &quot;Jeg heter Pryd&quot; and the final corrected it, which is the intended behaviour.</p>
+    <p>Whisper wrote &quot;Thor&quot; for &quot;Tor&quot;. A vocabulary field in the debug drawer now feeds names and terms to Whisper and to Claude. It fixed &quot;Whisper&quot;; the synthetic voice really does say &quot;Thor&quot;, so that one needs your own voice to judge.</p>
+    <figure><img src="img/2026-10-30-live-mic-norwegian.jpg" alt="Introduksjon blob with an Utdanning sub-topic, a Local Speech Recognition blob, and the debug drawer listing topics, categorizer calls and the transcript." loading="lazy"><figcaption>Introduksjon blob with an Utdanning sub-topic, a Local Speech Recognition blob, and the debug drawer listing topics, categorizer calls and the transcript.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-live" data-entry="2026-10-30-live" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-30-claude-cli" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Categorize through claude -p with your Claude Code login</h3>
+    <dl class="adr"><dt>Context</dt><dd>There is no ANTHROPIC_API_KEY on this Mac. You asked whether the local app could pass the text to Claude with claude -p.</dd>
+    <dt>Choice</dt><dd>The server runs claude -p per pause with no tools, no settings, no MCP servers and no session file, a fixed system prompt, and a JSON schema for the output. With the defaults it loaded every plugin and cost 9 s; stripped down it takes about 3.5 s.</dd>
+    <dt>Consequences</dt><dd>TOPIC_PROVIDER=auto picks the API when a key exists, then claude -p, then an offline keyword heuristic. If a call fails, the client falls back to offline for that chunk and shows a notice.</dd>
+    </dl>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-claude-cli" data-entry="2026-10-30-claude-cli" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-30-local-stt" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Transcribe locally with whisper.cpp, cut at pauses by voice detection</h3>
+    <dl class="adr"><dt>Context</dt><dd>You wanted transcription on the Mac, in the spirit of metawhisp, with the language detected on the fly.</dd>
+    <dt>Choice</dt><dd>Silero voice detection runs in the browser and cuts speech at pauses. Each utterance goes to whisper-server (whisper.cpp, Metal) with language set to auto. whisper.cpp was already installed through Homebrew.</dd>
+    <dt>Considered</dt><dd><ul><li>WhisperKit, the engine metawhisp uses. Adapter written; switch with STT_ENGINE=whisperkit.</li><li>Azure OpenAI realtime transcription. Cloud, so dropped.</li><li>Parakeet v3. No Norwegian.</li><li>WhisperLiveKit. Python, and its auto language mode is documented as biased toward English.</li></ul></dd>
+    <dt>Consequences</dt><dd>The pause that ends an utterance is also the moment the topic engine asks Claude. Auto-detected languages outside the allowlist (no, en) are re-run with the last good language.</dd>
+    </dl>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-local-stt" data-entry="2026-10-30-local-stt" hidden>Comment on this</button></article>
+      <article class="entry entry-decision" id="2026-10-30-stack" data-comment-target><header class="entry-head">
+      <span class="orb orb-decision" aria-hidden="true"></span>
+      <span class="type">Decision</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Vite, React, react-three-fiber and a small Hono server</h3>
+    <dl class="adr"><dt>Context</dt><dd>A canvas-heavy single page that needs a server for Whisper and Claude.</dd>
+    <dt>Choice</dt><dd>One package, one npm run dev for both processes. three is pinned to 0.186 because @react-three/postprocessing does not support 0.187 yet.</dd>
+    <dt>Consequences</dt><dd>Blob shaders use three-custom-shader-material on a physical material. Keywords are painted onto an equirectangular canvas texture, so they deform and rotate with the surface.</dd>
+    </dl>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-stack" data-entry="2026-10-30-stack" hidden>Comment on this</button></article>
+      <article class="entry entry-note" id="2026-10-30-plan" data-comment-target><header class="entry-head">
+      <span class="orb orb-note" aria-hidden="true"></span>
+      <span class="type">Note</span>
+      <time datetime="2026-10-30">30 Oct 2026</time>
+    </header>
+    <h3>Architecture</h3>
+    <p>Every transcript event and every categorizer response is recorded, so any talk can be replayed into the scene, either with the recorded topics or re-categorized to test a prompt change.</p>
+    <div class="diagram"><pre class="mermaid">flowchart LR
+  mic[Microphone] --&gt; vad[Voice detection&lt;br/&gt;in browser]
+  vad -- utterance WAV --&gt; stt[whisper.cpp&lt;br/&gt;large-v3-turbo]
+  stt -- text + language --&gt; engine[Topic engine]
+  vad -- pause --&gt; engine
+  engine -- topic tree + new text --&gt; claude[Claude Sonnet 5.5&lt;br/&gt;claude -p]
+  claude -- topic ops --&gt; reducer[Reducer with&lt;br/&gt;guardrails]
+  reducer --&gt; scene[3D scene:&lt;br/&gt;blobs, bubbles, links]
+  engine -. every event .-&gt; rec[Session recorder&lt;br/&gt;and replay]</pre></div>
+    <figure><img src="img/2026-10-30-first-blob.jpg" alt="The first rendered section: an orange Introduction blob with an Academic Background sub-topic below it." loading="lazy"><figcaption>The first rendered section: an orange Introduction blob with an Academic Background sub-topic below it.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-30-plan" data-entry="2026-10-30-plan" hidden>Comment on this</button></article>
+    </main>
+    <aside class="aside">
+      <section class="card">
+        <h2>How we work</h2>
+        <p>Comment on any entry. In the terminal, these project skills drive the loop:</p>
+        <ul>
+        <li><code>/buildlog</code><span>Add an entry here, rebuild the page and republish it to the same link.</span></li>
+        <li><code>/propose</code><span>Write up an open question with two or three options and a recommendation, then ask you.</span></li>
+        <li><code>/feedback</code><span>Read your comments on this page, turn them into decisions or tasks, and answer in the thread.</span></li>
+        <li><code>/demo</code><span>Start the app, run it in Chrome, and attach a screenshot to the log.</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Entry types</h2>
+        <ul class="legend">
+          <li><span class="orb orb-proposal"></span><span>Needs your call: an open question with a recommendation</span></li>
+          <li><span class="orb orb-decision"></span><span>Decision: what we chose and why</span></li>
+          <li><span class="orb orb-milestone"></span><span>Milestone: something that now works</span></li>
+          <li><span class="orb orb-note"></span><span>Note: observations and test results</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script>
+(async () => {
+  // "Comment on this" opens claude.ai's own comment composer on that entry. Hidden where commenting is unavailable.
+  let comments = null;
+  try { comments = window.claude ? await window.claude.use('comments') : null; } catch { comments = null; }
+  if (!comments) return;
+  for (const btn of document.querySelectorAll('button.comment')) {
+    btn.hidden = false;
+    btn.addEventListener('click', async () => {
+      const entry = document.getElementById(btn.dataset.entry);
+      try {
+        await comments.openComposer({ element: entry });
+      } catch (err) {
+        if (err && (err.code === 'unavailable' || err.code === 'not_granted')) {
+          document.querySelectorAll('button.comment').forEach((b) => (b.hidden = true));
+        }
+      }
+    });
+  }
+})();
+</script>

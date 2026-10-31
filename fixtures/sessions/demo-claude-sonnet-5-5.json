@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-30T11:54:57.471Z",
+  "title": "snakk session",
+  "events": [
+    {
+      "type": "speechStart",
+      "t": 0
+    },
+    {
+      "type": "speechEnd",
+      "t": 3996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo0",
+        "text": "Hello everyone, my name is Tor, and today I will start with a brief introduction of myself before we carry on to the big topics.",
+        "lang": "en",
+        "startMs": 0,
+        "endMs": 4000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 4496
+    },
+    {
+      "type": "speechStart",
+      "t": 6995
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo0"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "intro",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "intro",
+            "title": "Introduction",
+            "parentId": null,
+            "keywords": [
+              "Tor",
+              "self-introduction",
+              "big topics"
+            ],
+            "summary": "Tor greets the audience and begins with a brief introduction of himself before the main topics."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4084
+      },
+      "t": 8590
+    },
+    {
+      "type": "speechEnd",
+      "t": 10996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo1",
+        "text": "So my background is from academia. I have a PhD in physics, where I worked on numerical models of ocean currents.",
+        "lang": "en",
+        "startMs": 7000,
+        "endMs": 11000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 11497
+    },
+    {
+      "type": "speechStart",
+      "t": 13995
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo1"
+      ],
+      "words": 21,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Academic Background",
+            "parentId": "topic1",
+            "keywords": [
+              "academia",
+              "PhD physics",
+              "ocean currents",
+              "numerical models"
+            ],
+            "summary": "Tor has an academic background with a physics PhD on numerical models of ocean currents."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4174
+      },
+      "t": 15676
+    },
+    {
+      "type": "speechEnd",
+      "t": 17996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo2",
+        "text": "After the PhD I moved into software, and for the time being I work as a full stack front end developer at Nordlo Next, mostly with React and Next.js.",
+        "lang": "en",
+        "startMs": 14000,
+        "endMs": 18000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 18496
+    },
+    {
+      "type": "speechStart",
+      "t": 21997
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo2"
+      ],
+      "words": 29,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Current Job",
+            "parentId": "topic1",
+            "keywords": [
+              "software",
+              "Nordlo Next",
+              "full stack",
+              "React",
+              "Next.js"
+            ],
+            "summary": "After his PhD Tor moved into software and now works as a full stack front end developer at Nordlo Next using React and Next.js."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3878
+      },
+      "t": 22379
+    },
+    {
+      "type": "speechEnd",
+      "t": 25996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo3",
+        "text": "Okay, now let us move on to the first big topic, which is how large language models are changing the way we write software.",
+        "lang": "en",
+        "startMs": 22000,
+        "endMs": 26000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 26496
+    },
+    {
+      "type": "speechStart",
+      "t": 28996
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo3"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "LLMs Changing Software",
+            "parentId": null,
+            "keywords": [
+              "large language models",
+              "writing software"
+            ],
+            "summary": "LLMs are changing the way we write software."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3161
+      },
+      "t": 29663
+    },
+    {
+      "type": "speechEnd",
+      "t": 32996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo4",
+        "text": "Coding agents like Claude Code can read a whole repository, run the tests, and propose changes, so the developer becomes more of a reviewer and an architect.",
+        "lang": "en",
+        "startMs": 29000,
+        "endMs": 33000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 33496
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo4"
+      ],
+      "words": 27,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic16",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic16",
+            "keywords": [
+              "coding agents",
+              "Claude Code",
+              "whole repository",
+              "reviewer",
+              "architect"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic16",
+            "summary": "LLM coding agents read repositories, run tests and propose changes, turning developers into reviewers and architects."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3489
+      },
+      "t": 36989
+    },
+    {
+      "type": "speechStart",
+      "t": 37005
+    },
+    {
+      "type": "speechEnd",
+      "t": 40996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo5",
+        "text": "That also changes how we plan work. We write specifications and build logs, and we iterate with the agent instead of typing every line ourselves.",
+        "lang": "en",
+        "startMs": 37000,
+        "endMs": 41000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 41496
+    },
+    {
+      "type": "speechStart",
+      "t": 44996
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo5"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic16",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic16",
+            "keywords": [
+              "planning work",
+              "specifications",
+              "build logs",
+              "iterating"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic16",
+            "summary": "LLM coding agents turn developers into reviewers and architects, and change planning toward specifications, build logs and iteration with the agent."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4008
+      },
+      "t": 45510
+    },
+    {
+      "type": "speechEnd",
+      "t": 48996
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo6",
+        "text": "The second big topic is local speech recognition. Whisper runs on a laptop now, so this talk is being transcribed on my Mac without sending audio to the cloud.",
+        "lang": "en",
+        "startMs": 45000,
+        "endMs": 49000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 49495
+    },
+    {
+      "type": "speechStart",
+      "t": 52995
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo6"
+      ],
+      "words": 29,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Local Speech Recognition",
+            "parentId": null,
+            "keywords": [
+              "local speech recognition",
+              "Whisper",
+              "laptop",
+              "Mac",
+              "no cloud"
+            ],
+            "summary": "Whisper now runs on a laptop, so this talk is transcribed locally on a Mac without sending audio to the cloud."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4011
+      },
+      "t": 53513
+    },
+    {
+      "type": "speechEnd",
+      "t": 56997
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "demo7",
+        "text": "Voice activity detection finds the pauses, and each pause is the moment the system asks the model what I am talking about.",
+        "lang": "en",
+        "startMs": 53000,
+        "endMs": 57000,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 57496
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "demo7"
+      ],
+      "words": 22,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic28",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic28",
+            "keywords": [
+              "voice activity detection",
+              "pauses",
+              "asking the model"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3222
+      },
+      "t": 60741
+    }
+  ]
+}

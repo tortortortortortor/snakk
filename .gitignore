@@ -1,0 +1,20 @@
+# dependencies and builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# local config and secrets
+.env
+.env.local
+.env.*.local
+.claude/settings.local.json
+
+# recordings: captures from scripts/capture, and sessions kept local on purpose
+captures/
+fixtures/sessions/*.local.json
+
+# editors and OS
+.DS_Store
+.vscode/
+.idea/
+*.log

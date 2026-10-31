@@ -1,0 +1,42 @@
+.chalkboard {
+  position: fixed;
+  inset: 0;
+  /* Slate: dark green-black, with the cloudy marks an eraser leaves behind. */
+  background:
+    radial-gradient(ellipse 40% 30% at 22% 28%, rgba(220, 235, 225, 0.045), transparent 70%),
+    radial-gradient(ellipse 35% 22% at 72% 62%, rgba(220, 235, 225, 0.04), transparent 70%),
+    radial-gradient(ellipse 50% 18% at 55% 18%, rgba(220, 235, 225, 0.03), transparent 70%),
+    radial-gradient(ellipse at center, #26332d 0%, #1b2420 70%, #141b18 100%);
+  box-shadow: inset 0 0 160px rgba(0, 0, 0, 0.55);
+}
+.chalk-svg { width: 100%; height: 100%; display: block; }
+.chalk-svg text { font-family: 'Caveat Variable', 'Caveat', cursive; fill: #ecebe4; }
+.chalk-svg path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+.chalk-svg .section { transition: opacity 1.2s ease; opacity: 0.66; }
+.chalk-svg .section.current { opacity: 1; }
+.chalk-svg .ring { stroke: var(--chalk); stroke-width: 3.2; }
+.chalk-svg .ring.again { stroke-width: 2.2; opacity: 0.8; }
+.chalk-svg .underline { stroke: var(--chalk); stroke-width: 2.6; animation-delay: 0.9s; }
+.chalk-svg .title { font-weight: 600; }
+.chalk-svg .sub .ring { stroke-width: 2.4; }
+.chalk-svg .sub .title { font-weight: 500; fill: var(--chalk); }
+.chalk-svg .sub.active .ring { stroke-width: 3.4; }
+.chalk-svg .keyword { font-weight: 500; fill: #e4e2da; }
+.chalk-svg .keyword.more { fill: #a9a79f; }
+
+.chalk-svg .arrow path { stroke: #e4e2da; stroke-width: 2.6; }
+.chalk-svg .arrow.return path { stroke: #f3e38a; stroke-width: 3; }
+.chalk-svg .arrow.sub path { stroke: #cfcdc5; stroke-width: 2; }
+.chalk-svg .arrow .head { animation-delay: 0.9s; }
+
+/* Drawn on: strokes trace themselves, text is revealed left to right. */
+.chalk-svg .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: chalk-draw 1.1s cubic-bezier(0.45, 0.1, 0.3, 1) forwards; }
+.chalk-svg .head { animation-duration: 0.3s; }
+@keyframes chalk-draw { to { stroke-dashoffset: 0; } }
+.chalk-svg .write { clip-path: inset(-40% 100% -40% -10%); animation: chalk-write var(--write-ms, 600ms) linear var(--delay-ms, 0ms) forwards; }
+@keyframes chalk-write { to { clip-path: inset(-40% -10% -40% -10%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .chalk-svg .draw, .chalk-svg .write { animation-duration: 1ms; animation-delay: 0ms; }
+}

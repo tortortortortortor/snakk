@@ -1,0 +1,1884 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-30T13:42:58.693Z",
+  "title": "Lecture: the northern lights (5 min)",
+  "events": [
+    {
+      "type": "speechStart",
+      "t": 0
+    },
+    {
+      "type": "speechEnd",
+      "t": 7742
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec0",
+        "text": "Good morning everyone. Today we are going to talk about the northern lights, the aurora borealis, and why they look the way they do.",
+        "lang": "en",
+        "startMs": 0,
+        "endMs": 7742,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 8243
+    },
+    {
+      "type": "speechStart",
+      "t": 8742
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec0"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "intro",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "intro",
+            "title": "Introduction",
+            "parentId": null,
+            "keywords": [
+              "northern lights",
+              "aurora borealis",
+              "greeting"
+            ],
+            "summary": "The speaker welcomes the audience and introduces a talk on the northern lights and why they look as they do."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3845
+      },
+      "t": 12095
+    },
+    {
+      "type": "speechEnd",
+      "t": 16162
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec1",
+        "text": "I grew up in Tromsø, so for me the aurora was just something that happened on the way home from school in winter.",
+        "lang": "en",
+        "startMs": 8742,
+        "endMs": 16161,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 16663
+    },
+    {
+      "type": "speechStart",
+      "t": 18163
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec1"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Growing Up in Tromsø",
+            "parentId": "topic1",
+            "keywords": [
+              "Tromsø",
+              "childhood",
+              "school commute",
+              "winter"
+            ],
+            "summary": "The speaker grew up in Tromsø, where the aurora was an everyday sight on the way home from school."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3599
+      },
+      "t": 20265
+    },
+    {
+      "type": "speechEnd",
+      "t": 23324
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec2",
+        "text": "But it took scientists a surprisingly long time to understand where the light actually comes from.",
+        "lang": "en",
+        "startMs": 18161,
+        "endMs": 23322,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 23823
+    },
+    {
+      "type": "speechStart",
+      "t": 25072
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec2"
+      ],
+      "words": 16,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Origin of the Light",
+            "parentId": null,
+            "keywords": [
+              "scientific discovery",
+              "light source"
+            ],
+            "summary": "Scientists took a surprisingly long time to understand where the aurora's light comes from."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3418
+      },
+      "t": 27245
+    },
+    {
+      "type": "speechEnd",
+      "t": 32492
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec3",
+        "text": "So let us start with the sun. The sun is not a calm ball of fire, it is constantly throwing out charged particles.",
+        "lang": "en",
+        "startMs": 25072,
+        "endMs": 32491,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 32991
+    },
+    {
+      "type": "speechStart",
+      "t": 33991
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec3"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "The Sun's Particles",
+            "parentId": null,
+            "keywords": [
+              "the sun",
+              "charged particles",
+              "solar activity"
+            ],
+            "summary": "The speaker starts with the sun, which constantly throws out charged particles rather than being a calm ball of fire."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 5088
+      },
+      "t": 38083
+    },
+    {
+      "type": "speechEnd",
+      "t": 40767
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec4",
+        "text": "This stream of electrons and protons is called the solar wind, and it travels at around four hundred kilometres per second.",
+        "lang": "en",
+        "startMs": 33991,
+        "endMs": 40765,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 41265
+    },
+    {
+      "type": "speechStart",
+      "t": 42016
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec4"
+      ],
+      "words": 21,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic13",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic13",
+            "keywords": [
+              "solar wind",
+              "electrons",
+              "protons",
+              "400 km/s"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3262
+      },
+      "t": 44534
+    },
+    {
+      "type": "speechEnd",
+      "t": 49435
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec5",
+        "text": "Sometimes the sun has a much bigger outburst, a coronal mass ejection, which is like a billion tonnes of plasma flung into space.",
+        "lang": "en",
+        "startMs": 42015,
+        "endMs": 49434,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 49934
+    },
+    {
+      "type": "speechStart",
+      "t": 50434
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec5"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic13",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic13",
+            "keywords": [
+              "coronal mass ejection",
+              "billion tonnes",
+              "plasma"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic13",
+            "summary": "The sun constantly throws out charged particles as solar wind, and sometimes releases huge coronal mass ejections."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3505
+      },
+      "t": 53442
+    },
+    {
+      "type": "speechEnd",
+      "t": 59144
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec6",
+        "text": "When one of those is aimed at Earth, it takes about two to three days to arrive, and that is when we get the really strong displays.",
+        "lang": "en",
+        "startMs": 50434,
+        "endMs": 59144,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 59644
+    },
+    {
+      "type": "speechStart",
+      "t": 61144
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec6"
+      ],
+      "words": 27,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic13",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic13",
+            "keywords": [
+              "aimed at Earth",
+              "2-3 days",
+              "strong displays"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic13",
+            "summary": "The sun throws out solar wind and sometimes huge coronal mass ejections, which take two to three days to reach Earth and cause strong auroras."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3940
+      },
+      "t": 63590
+    },
+    {
+      "type": "speechEnd",
+      "t": 67273
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec7",
+        "text": "The number of sunspots also follows an eleven year cycle, and we are right around the solar maximum now.",
+        "lang": "en",
+        "startMs": 61144,
+        "endMs": 67273,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 67774
+    },
+    {
+      "type": "speechStart",
+      "t": 69024
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec7"
+      ],
+      "words": 19,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic13",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic13",
+            "keywords": [
+              "sunspots",
+              "11-year cycle",
+              "solar maximum"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3278
+      },
+      "t": 71055
+    },
+    {
+      "type": "speechEnd",
+      "t": 77088
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec8",
+        "text": "Now, the second piece of the puzzle is our own planet. Earth has a magnetic field, generated by the liquid iron in the outer core.",
+        "lang": "en",
+        "startMs": 69023,
+        "endMs": 77088,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 77588
+    },
+    {
+      "type": "speechStart",
+      "t": 78588
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec8"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Earth's Magnetic Field",
+            "parentId": null,
+            "keywords": [
+              "magnetic field",
+              "liquid iron",
+              "outer core"
+            ],
+            "summary": "The second piece of the puzzle is Earth's magnetic field, generated by liquid iron in the outer core."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3425
+      },
+      "t": 81017
+    },
+    {
+      "type": "speechEnd",
+      "t": 84394
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec9",
+        "text": "That field forms a bubble around us called the magnetosphere, and it deflects most of the solar wind.",
+        "lang": "en",
+        "startMs": 78588,
+        "endMs": 84394,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 84895
+    },
+    {
+      "type": "speechStart",
+      "t": 85645
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec9"
+      ],
+      "words": 18,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "magnetosphere",
+              "solar wind deflection",
+              "protective bubble"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic30",
+            "summary": "Earth's magnetic field, generated by liquid iron in the outer core, forms the magnetosphere that deflects most of the solar wind."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3638
+      },
+      "t": 88536
+    },
+    {
+      "type": "speechEnd",
+      "t": 91129
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec10",
+        "text": "On the night side the magnetosphere is stretched out into a long tail, almost like a comet.",
+        "lang": "en",
+        "startMs": 85644,
+        "endMs": 91128,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 91630
+    },
+    {
+      "type": "speechStart",
+      "t": 92129
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec10"
+      ],
+      "words": 17,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "night side",
+              "magnetotail",
+              "comet-like tail"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3134
+      },
+      "t": 94767
+    },
+    {
+      "type": "speechEnd",
+      "t": 99548
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec11",
+        "text": "When the solar wind pushes hard enough, the field lines in that tail snap and reconnect, and that releases a lot of energy.",
+        "lang": "en",
+        "startMs": 92128,
+        "endMs": 99547,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 100048
+    },
+    {
+      "type": "speechStart",
+      "t": 101548
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec11"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "field line reconnection",
+              "energy release"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3090
+      },
+      "t": 103141
+    },
+    {
+      "type": "speechEnd",
+      "t": 109613
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec12",
+        "text": "The particles are then funnelled down along the field lines toward the magnetic poles, which is why the aurora forms an oval around the poles.",
+        "lang": "en",
+        "startMs": 101547,
+        "endMs": 109612,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 110113
+    },
+    {
+      "type": "speechStart",
+      "t": 111362
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec12"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "funnelled particles",
+              "magnetic poles",
+              "aurora oval"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3185
+      },
+      "t": 113302
+    },
+    {
+      "type": "speechEnd",
+      "t": 118459
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec13",
+        "text": "That is also why Tromsø is so good. It sits right under the auroral oval, while Oslo is usually too far south.",
+        "lang": "en",
+        "startMs": 111362,
+        "endMs": 118459,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 118960
+    },
+    {
+      "type": "speechStart",
+      "t": 119959
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec13"
+      ],
+      "words": 22,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "Tromsø location",
+              "under the oval",
+              "Oslo too far south"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3317
+      },
+      "t": 122280
+    },
+    {
+      "type": "speechEnd",
+      "t": 127056
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec14",
+        "text": "Okay, so what actually makes the light? The particles crash into the upper atmosphere, about one hundred to three hundred kilometres up.",
+        "lang": "en",
+        "startMs": 119959,
+        "endMs": 127056,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 127556
+    },
+    {
+      "type": "speechStart",
+      "t": 128307
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec14"
+      ],
+      "words": 22,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Light in the Atmosphere",
+            "parentId": null,
+            "keywords": [
+              "upper atmosphere",
+              "100-300 km",
+              "particle collisions"
+            ],
+            "summary": "Particles crash into the upper atmosphere about 100 to 300 kilometres up, producing the aurora's light."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4024
+      },
+      "t": 131583
+    },
+    {
+      "type": "speechEnd",
+      "t": 134759
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec15",
+        "text": "They excite oxygen and nitrogen atoms, and when those atoms relax again they give off light at very specific colours.",
+        "lang": "en",
+        "startMs": 128306,
+        "endMs": 134758,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 135259
+    },
+    {
+      "type": "speechStart",
+      "t": 135758
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec15"
+      ],
+      "words": 20,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic48",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic48",
+            "keywords": [
+              "oxygen",
+              "nitrogen",
+              "excited atoms",
+              "specific colours"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic48",
+            "summary": "Particles hit the upper atmosphere 100 to 300 km up, exciting oxygen and nitrogen atoms that emit light at specific colours as they relax."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3753
+      },
+      "t": 139018
+    },
+    {
+      "type": "speechEnd",
+      "t": 142854
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec16",
+        "text": "The common green colour comes from oxygen at around one hundred kilometres, at a wavelength of five hundred and fifty seven nanometres.",
+        "lang": "en",
+        "startMs": 135758,
+        "endMs": 142855,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 143356
+    },
+    {
+      "type": "speechStart",
+      "t": 144854
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec16"
+      ],
+      "words": 22,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic48",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic48",
+            "keywords": [
+              "green colour",
+              "oxygen at 100 km",
+              "557 nm"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4017
+      },
+      "t": 147376
+    },
+    {
+      "type": "speechEnd",
+      "t": 152921
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec17",
+        "text": "Red aurora comes from oxygen much higher up, where the air is so thin that the atoms have time to emit that slower red light.",
+        "lang": "en",
+        "startMs": 144855,
+        "endMs": 152920,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 153421
+    },
+    {
+      "type": "speechStart",
+      "t": 154671
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec17"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic48",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic48",
+            "keywords": [
+              "red aurora",
+              "high altitude oxygen",
+              "thin air",
+              "slow emission"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3122
+      },
+      "t": 156548
+    },
+    {
+      "type": "speechEnd",
+      "t": 162090
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec18",
+        "text": "And the purple and pink fringes at the bottom edge come from nitrogen, when the particles are energetic enough to get really deep.",
+        "lang": "en",
+        "startMs": 154670,
+        "endMs": 162089,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 162591
+    },
+    {
+      "type": "speechStart",
+      "t": 163589
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec18"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic48",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic48",
+            "keywords": [
+              "purple fringes",
+              "pink edge",
+              "nitrogen",
+              "deep penetration"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3479
+      },
+      "t": 166075
+    },
+    {
+      "type": "speechEnd",
+      "t": 169395
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec19",
+        "text": "It is basically the same physics as a neon sign, just on a scale of thousands of kilometres.",
+        "lang": "en",
+        "startMs": 163589,
+        "endMs": 169395,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 169896
+    },
+    {
+      "type": "speechStart",
+      "t": 170646
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec19"
+      ],
+      "words": 18,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic48",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic48",
+            "keywords": [
+              "neon sign",
+              "same physics",
+              "thousands of km"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3159
+      },
+      "t": 173060
+    },
+    {
+      "type": "speechEnd",
+      "t": 177097
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec20",
+        "text": "A little side story. In Norse mythology some people said the lights were reflections from the shields of the Valkyries.",
+        "lang": "en",
+        "startMs": 170645,
+        "endMs": 177097,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 177596
+    },
+    {
+      "type": "speechStart",
+      "t": 178097
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec20"
+      ],
+      "words": 20,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Norse Mythology Folklore",
+            "parentId": null,
+            "keywords": [
+              "Norse mythology",
+              "Valkyries",
+              "shield reflections"
+            ],
+            "summary": "As a side story, the speaker notes that Norse myth explained the lights as reflections from the Valkyries' shields."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4030
+      },
+      "t": 181630
+    },
+    {
+      "type": "speechEnd",
+      "t": 186163
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec21",
+        "text": "In parts of Finland the word for aurora means fox fires, from a story about a fox whose tail threw sparks up into the sky.",
+        "lang": "en",
+        "startMs": 178097,
+        "endMs": 186162,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 186663
+    },
+    {
+      "type": "speechStart",
+      "t": 188163
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec21"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic69",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic69",
+            "keywords": [
+              "Finland",
+              "fox fires",
+              "fox tail sparks"
+            ]
+          },
+          {
+            "op": "rename",
+            "topicId": "topic69",
+            "title": "Folklore and Myths"
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic69",
+            "summary": "As a side story, folklore explained the lights: Norse Valkyrie shields and the Finnish fox fires."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3725
+      },
+      "t": 190392
+    },
+    {
+      "type": "speechEnd",
+      "t": 196549
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec22",
+        "text": "And among the Sámi, there was a tradition that you should not whistle or wave at the lights, because they might come down and take you.",
+        "lang": "en",
+        "startMs": 188162,
+        "endMs": 196549,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 197049
+    },
+    {
+      "type": "speechStart",
+      "t": 198300
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec22"
+      ],
+      "words": 26,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic69",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic69",
+            "keywords": [
+              "Sámi tradition",
+              "no whistling",
+              "taken by lights"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic69",
+            "summary": "As a side story, folklore explained the lights: Valkyrie shields, Finnish fox fires and the Sámi warning not to whistle at them."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3883
+      },
+      "t": 200936
+    },
+    {
+      "type": "speechEnd",
+      "t": 204751
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec23",
+        "text": "My grandmother still told me to be quiet when the lights were strong, so these stories are not that old.",
+        "lang": "en",
+        "startMs": 198299,
+        "endMs": 204751,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 205251
+    },
+    {
+      "type": "speechStart",
+      "t": 206252
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec23"
+      ],
+      "words": 20,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic69",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic69",
+            "keywords": [
+              "grandmother",
+              "be quiet",
+              "recent beliefs"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic69",
+            "summary": "Folklore explained the lights: Valkyrie shields, Finnish fox fires and the Sámi warning not to whistle, beliefs still alive in the speaker's grandmother."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3621
+      },
+      "t": 208879
+    },
+    {
+      "type": "speechEnd",
+      "t": 211735
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec24",
+        "text": "Let us go back to the science for a moment, because I skipped something about the magnetosphere.",
+        "lang": "en",
+        "startMs": 206251,
+        "endMs": 211735,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 212235
+    },
+    {
+      "type": "speechStart",
+      "t": 212985
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec24"
+      ],
+      "words": 17,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 2988
+      },
+      "t": 215226
+    },
+    {
+      "type": "speechEnd",
+      "t": 220727
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec25",
+        "text": "When a big storm hits, the auroral oval expands toward the equator, and then people in Germany or even Spain can see red aurora.",
+        "lang": "en",
+        "startMs": 212985,
+        "endMs": 220727,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 221227
+    },
+    {
+      "type": "speechStart",
+      "t": 221726
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec25"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "big storm",
+              "oval expands",
+              "Germany and Spain",
+              "red aurora"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 4028
+      },
+      "t": 225259
+    },
+    {
+      "type": "speechEnd",
+      "t": 230114
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec26",
+        "text": "Those storms can also induce currents in power lines and pipelines, and in 1989 a storm knocked out the power grid in Quebec for nine hours.",
+        "lang": "en",
+        "startMs": 221727,
+        "endMs": 230114,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 230614
+    },
+    {
+      "type": "speechStart",
+      "t": 232113
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec26"
+      ],
+      "words": 26,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "induced currents",
+              "power lines",
+              "1989 Quebec blackout",
+              "nine hours"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3575
+      },
+      "t": 234191
+    },
+    {
+      "type": "speechEnd",
+      "t": 238243
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec27",
+        "text": "Satellites suffer too, because the upper atmosphere heats up and expands, so there is more drag on low orbits.",
+        "lang": "en",
+        "startMs": 232114,
+        "endMs": 238243,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 238743
+    },
+    {
+      "type": "speechStart",
+      "t": 239994
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec27"
+      ],
+      "words": 19,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic30",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic30",
+            "keywords": [
+              "satellite drag",
+              "atmosphere expands",
+              "low orbits"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3722
+      },
+      "t": 242470
+    },
+    {
+      "type": "speechEnd",
+      "t": 246767
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec28",
+        "text": "So how do you actually see the aurora? The first thing is darkness. You need to get away from city lights.",
+        "lang": "en",
+        "startMs": 239993,
+        "endMs": 246767,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 247267
+    },
+    {
+      "type": "speechStart",
+      "t": 248267
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec28"
+      ],
+      "words": 21,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "How to See Aurora",
+            "parentId": null,
+            "keywords": [
+              "darkness",
+              "city lights",
+              "viewing tips"
+            ],
+            "summary": "To see the aurora you first need darkness, away from city lights."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3458
+      },
+      "t": 250731
+    },
+    {
+      "type": "speechEnd",
+      "t": 253750
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec29",
+        "text": "Then you need clear skies, which on the coast of northern Norway is honestly the hardest part.",
+        "lang": "en",
+        "startMs": 248267,
+        "endMs": 253751,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 254251
+    },
+    {
+      "type": "speechStart",
+      "t": 255001
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec29"
+      ],
+      "words": 17,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic93",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic93",
+            "keywords": [
+              "clear skies",
+              "northern Norway coast",
+              "weather"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic93",
+            "summary": "To see the aurora you need darkness away from city lights, and clear skies, which are the hardest part on Norway's northern coast."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3628
+      },
+      "t": 257883
+    },
+    {
+      "type": "speechEnd",
+      "t": 262743
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec30",
+        "text": "There are forecasts based on satellites that sit between us and the sun and measure the solar wind about an hour before it hits.",
+        "lang": "en",
+        "startMs": 255001,
+        "endMs": 262743,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 263243
+    },
+    {
+      "type": "speechStart",
+      "t": 263743
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec30"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic93",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic93",
+            "keywords": [
+              "aurora forecasts",
+              "solar wind satellites",
+              "one hour warning"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic93",
+            "summary": "To see the aurora you need darkness, clear skies and forecasts, including satellite measurements of the solar wind an hour ahead."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3479
+      },
+      "t": 266727
+    },
+    {
+      "type": "speechEnd",
+      "t": 271486
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec31",
+        "text": "The Kp index goes from zero to nine, and in Tromsø even a Kp of two or three can give you a nice display.",
+        "lang": "en",
+        "startMs": 263743,
+        "endMs": 271485,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 271986
+    },
+    {
+      "type": "speechStart",
+      "t": 273486
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec31"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic93",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic93",
+            "keywords": [
+              "Kp index",
+              "scale 0-9",
+              "Kp 2-3 in Tromsø"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3137
+      },
+      "t": 275127
+    },
+    {
+      "type": "speechEnd",
+      "t": 281550
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec32",
+        "text": "For photography, use a tripod, a wide lens, and an exposure of a few seconds. The camera often sees more colour than your eyes do.",
+        "lang": "en",
+        "startMs": 273485,
+        "endMs": 281550,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 282051
+    },
+    {
+      "type": "speechStart",
+      "t": 283300
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec32"
+      ],
+      "words": 25,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Photographing Aurora",
+            "parentId": "topic93",
+            "keywords": [
+              "tripod",
+              "wide lens",
+              "few seconds exposure",
+              "camera colour"
+            ],
+            "summary": "For aurora photography use a tripod, wide lens and a few seconds of exposure, since cameras see more colour than eyes."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3494
+      },
+      "t": 285549
+    },
+    {
+      "type": "speechEnd",
+      "t": 292009
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec33",
+        "text": "That is because our eyes are bad at colour in the dark, so faint aurora can look almost grey to us, but green on the camera sensor.",
+        "lang": "en",
+        "startMs": 283300,
+        "endMs": 292010,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 292511
+    },
+    {
+      "type": "speechStart",
+      "t": 293510
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec33"
+      ],
+      "words": 27,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic106",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic106",
+            "keywords": [
+              "eyes bad in dark",
+              "faint aurora looks grey",
+              "green on sensor"
+            ]
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3112
+      },
+      "t": 295638
+    },
+    {
+      "type": "speechEnd",
+      "t": 300929
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec34",
+        "text": "One last thing that I find beautiful: other planets have aurora too. Jupiter has permanent aurora that are bigger than the whole Earth.",
+        "lang": "en",
+        "startMs": 293510,
+        "endMs": 300929,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 301430
+    },
+    {
+      "type": "speechStart",
+      "t": 302179
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec34"
+      ],
+      "words": 23,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Aurora on Other Planets",
+            "parentId": null,
+            "keywords": [
+              "other planets",
+              "Jupiter",
+              "permanent aurora",
+              "bigger than Earth"
+            ],
+            "summary": "Other planets have aurora too, and Jupiter's permanent aurora are bigger than the whole Earth."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3610
+      },
+      "t": 305044
+    },
+    {
+      "type": "speechEnd",
+      "t": 309921
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec35",
+        "text": "Saturn has them as well, and even Mars has patchy aurora where pieces of its old magnetic field are still frozen into the crust.",
+        "lang": "en",
+        "startMs": 302179,
+        "endMs": 309921,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 310421
+    },
+    {
+      "type": "speechStart",
+      "t": 310921
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec35"
+      ],
+      "words": 24,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic114",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic114",
+            "keywords": [
+              "Saturn",
+              "Mars",
+              "patchy aurora",
+              "frozen magnetic field"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic114",
+            "summary": "Other planets have aurora too: Jupiter's are bigger than Earth, Saturn has them, and Mars has patchy ones from remnant crustal magnetism."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3674
+      },
+      "t": 314098
+    },
+    {
+      "type": "speechEnd",
+      "t": 318018
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec36",
+        "text": "So to sum up. The sun sends particles, the magnetosphere catches and guides them, and the atmosphere turns that energy into light.",
+        "lang": "en",
+        "startMs": 310921,
+        "endMs": 318018,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 318519
+    },
+    {
+      "type": "speechStart",
+      "t": 320018
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec36"
+      ],
+      "words": 22,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "new1",
+        "ops": [
+          {
+            "op": "new_topic",
+            "tempId": "new1",
+            "title": "Summary",
+            "parentId": null,
+            "keywords": [
+              "sun's particles",
+              "magnetosphere",
+              "energy to light"
+            ],
+            "summary": "The sun sends particles, the magnetosphere guides them, and the atmosphere turns their energy into light."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3797
+      },
+      "t": 322319
+    },
+    {
+      "type": "speechEnd",
+      "t": 329696
+    },
+    {
+      "type": "final",
+      "segment": {
+        "id": "lec37",
+        "text": "Next week we will look at how the same solar wind shapes the tails of comets. Thank you, and if you have questions, I am happy to take them now.",
+        "lang": "en",
+        "startMs": 320018,
+        "endMs": 329695,
+        "latencyMs": 0
+      },
+      "forced": true,
+      "t": 330194
+    },
+    {
+      "type": "categorized",
+      "segmentIds": [
+        "lec37"
+      ],
+      "words": 30,
+      "response": {
+        "utterance_language": "en",
+        "current_topic_id": "topic123",
+        "ops": [
+          {
+            "op": "add_keywords",
+            "topicId": "topic123",
+            "keywords": [
+              "next week",
+              "comet tails",
+              "questions"
+            ]
+          },
+          {
+            "op": "update_summary",
+            "topicId": "topic123",
+            "summary": "The sun sends particles, the magnetosphere guides them, and the atmosphere turns energy into light; next week covers comet tails, and questions are open."
+          }
+        ],
+        "provider": "claude-cli",
+        "model": "claude-sonnet-5-5",
+        "latencyMs": 3787
+      },
+      "t": 333985
+    }
+  ]
+}

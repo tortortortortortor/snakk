@@ -1,0 +1,5 @@
+[
+  { "name": "bubbles-new-section", "query": "viz=bubbles", "from": 124000, "shots": [128500, 133400], "clip": [128500, 141000] },
+  { "name": "chalkboard-new-section", "query": "viz=chalkboard", "from": 124000, "shots": [128500, 133400], "clip": [128500, 141000] },
+  { "name": "chalkboard-end", "query": "viz=chalkboard", "from": 318000, "shots": [322000, 332000] }
+]
