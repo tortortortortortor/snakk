@@ -111,7 +111,7 @@ figcaption { font-size: 13px; color: var(--ink-soft); }
   <header class="masthead">
     <h1>snakk <span>build log</span></h1>
     <p>A live map of a lecture. Speech is transcribed on the Mac, Claude sorts it into topics at each pause, and one engine feeds several ways of drawing them: 3D blobs, or a chalkboard.</p>
-    <div class="meta"><span>Updated 31 Oct 2026</span><span>14 entries</span><span><b>1 open proposal</b></span><span>Repo: ~/dev/snakk</span></div>
+    <div class="meta"><span>Updated 31 Oct 2026</span><span>15 entries</span><span><b>1 open proposal</b></span><span>Repo: ~/dev/snakk</span></div>
   </header>
 
   <ol class="track" aria-label="Milestones">
@@ -170,6 +170,18 @@ figcaption { font-size: 13px; color: var(--ink-soft); }
     <main class="log">
       <h2>Entries, newest first</h2>
       <h3 class="day" id="day-2"><span>Day 2</span> 31 Oct 2026</h3>
+      <article class="entry entry-note" id="2026-10-31-commits-and-layout" data-comment-target><header class="entry-head">
+      <span class="orb orb-note" aria-hidden="true"></span>
+      <span class="type">Note</span>
+      <time datetime="2026-10-31">31 Oct 2026</time>
+    </header>
+    <h3>Commits from here on, the app moves into web/, sub-topics stop overlapping</h3>
+    <p>Work is now committed as it lands, on the branch <strong>day-2</strong> (not pushed). The first commit is a baseline of everything up to now; each change after that is its own commit, so the history shows what moved.</p>
+    <p>The root is tidier: the browser app (index.html, public/, src/) lives in <strong>web/</strong>, next to server/, shared/ (imported as @shared), fixtures/, scripts/ and docs/. Checked: typecheck, all tests, a production build, and both views rendering the lecture after the move.</p>
+    <p>Fixed the overlap Tor spotted on the chalkboard: two sub-topics were stacked a fixed distance apart, so a wrapped title plus its keywords ran into the next one. They now stack by their real height, shrink a little when the cell is tight, and keep one keyword each rather than becoming unreadable. Cells are a bit taller to make room. A new test builds exactly that case and checks nothing overlaps or leaves its cell.</p>
+    <table class="metrics"><tbody><tr><th scope="row">Tests</th><td>35 passing</td></tr><tr><th scope="row">Commits</th><td>b644dc0 baseline, e608097 web/ move</td></tr></tbody></table>
+    <figure><img src="img/2026-10-31-subtopics-stacked.jpg" alt="A section with two sub-topics, Academic Background and Current Job, stacked under each other with their keywords, nothing overlapping." loading="lazy"><figcaption>A section with two sub-topics, Academic Background and Current Job, stacked under each other with their keywords, nothing overlapping.</figcaption></figure>
+    <button type="button" class="comment" id="comment-btn-2026-10-31-commits-and-layout" data-entry="2026-10-31-commits-and-layout" hidden>Comment on this</button></article>
       <article class="entry entry-milestone" id="2026-10-31-chalkboard-v1" data-comment-target><header class="entry-head">
       <span class="orb orb-milestone" aria-hidden="true"></span>
       <span class="type">Milestone</span>

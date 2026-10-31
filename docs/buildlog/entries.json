@@ -47,6 +47,31 @@
   ],
   "entries": [
     {
+      "id": "2026-10-31-commits-and-layout",
+      "date": "2026-10-31",
+      "type": "note",
+      "title": "Commits from here on, the app moves into web/, sub-topics stop overlapping",
+      "image": {
+        "src": "img/2026-10-31-subtopics-stacked.jpg",
+        "alt": "A section with two sub-topics, Academic Background and Current Job, stacked under each other with their keywords, nothing overlapping."
+      },
+      "body": [
+        "Work is now committed as it lands, on the branch **day-2** (not pushed). The first commit is a baseline of everything up to now; each change after that is its own commit, so the history shows what moved.",
+        "The root is tidier: the browser app (index.html, public/, src/) lives in **web/**, next to server/, shared/ (imported as @shared), fixtures/, scripts/ and docs/. Checked: typecheck, all tests, a production build, and both views rendering the lecture after the move.",
+        "Fixed the overlap Tor spotted on the chalkboard: two sub-topics were stacked a fixed distance apart, so a wrapped title plus its keywords ran into the next one. They now stack by their real height, shrink a little when the cell is tight, and keep one keyword each rather than becoming unreadable. Cells are a bit taller to make room. A new test builds exactly that case and checks nothing overlaps or leaves its cell."
+      ],
+      "metrics": [
+        [
+          "Tests",
+          "35 passing"
+        ],
+        [
+          "Commits",
+          "b644dc0 baseline, e608097 web/ move"
+        ]
+      ]
+    },
+    {
       "id": "2026-10-31-chalkboard-v1",
       "date": "2026-10-31",
       "type": "milestone",
