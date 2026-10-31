@@ -7,7 +7,7 @@ import { applyTopicOps } from './topics/reducer';
 import { emptyTopicState } from './topics/types';
 
 const lecture = JSON.parse(
-  readFileSync(join(__dirname, '../../fixtures/sessions/lecture-northern-lights-claude-sonnet-5-5.json'), 'utf8'),
+  readFileSync(join(__dirname, '../../../fixtures/sessions/lecture-northern-lights-claude-sonnet-5-5.json'), 'utf8'),
 ) as SessionFile;
 let state = emptyTopicState();
 for (const ev of lecture.events) if (ev.type === 'categorized') state = applyTopicOps(state, ev.response, { now: ev.t, words: ev.words }).state;

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { CategorizeResponse, HealthResponse, TopicOp } from '../../shared/topics';
+import type { CategorizeResponse, HealthResponse, TopicOp } from '@shared/topics';
 import { applyTopicOps, markLanded } from './topics/reducer';
 import { emptyTopicState, type PendingKeyword, type Segment, type TopicState } from './topics/types';
 

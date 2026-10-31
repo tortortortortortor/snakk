@@ -1,4 +1,4 @@
-import type { CategorizeRequest, CategorizeResponse } from '../../../shared/topics';
+import type { CategorizeRequest, CategorizeResponse } from '@shared/topics';
 import type { Segment, TopicState } from './types';
 
 export interface TopicEngineConfig {

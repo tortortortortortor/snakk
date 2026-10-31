@@ -9,7 +9,7 @@ import { BOARD, cellOrigin, FONT, layoutBoard, textWidth, wrap, type BoardSectio
 
 function lectureAt(untilMs: number): TopicState {
   const file = JSON.parse(
-    readFileSync(join(__dirname, '../../../fixtures/sessions/lecture-northern-lights-claude-sonnet-5-5.json'), 'utf8'),
+    readFileSync(join(__dirname, '../../../../fixtures/sessions/lecture-northern-lights-claude-sonnet-5-5.json'), 'utf8'),
   ) as SessionFile;
   let s = emptyTopicState();
   for (const ev of file.events) {

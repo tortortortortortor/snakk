@@ -1,4 +1,4 @@
-import type { TranscribeResult } from '../../../shared/topics';
+import type { TranscribeResult } from '@shared/topics';
 
 export interface FinalTranscript {
   id: string;

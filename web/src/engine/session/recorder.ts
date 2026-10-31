@@ -1,4 +1,4 @@
-import type { CategorizeResponse } from '../../../shared/topics';
+import type { CategorizeResponse } from '@shared/topics';
 import type { FinalTranscript } from '../transcript/source';
 
 export type SessionEvent =

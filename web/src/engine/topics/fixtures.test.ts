@@ -5,7 +5,7 @@ import type { SessionFile } from '../session/recorder';
 import { applyTopicOps } from './reducer';
 import { emptyTopicState } from './types';
 
-const dir = join(__dirname, '../../../fixtures/sessions');
+const dir = join(__dirname, '../../../../fixtures/sessions');
 const files = readdirSync(dir).filter((f) => f.endsWith('.json') && !f.endsWith('.local.json'));
 
 /** Replays recorded categorizer responses through the reducer: real model output must always apply cleanly. */

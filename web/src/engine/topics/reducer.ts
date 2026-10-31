@@ -1,4 +1,4 @@
-import type { TopicOp, TopicOpsResponse } from '../../../shared/topics';
+import type { TopicOp, TopicOpsResponse } from '@shared/topics';
 import type { PendingKeyword, Topic, TopicState } from './types';
 
 export const ANTI_FLICKER_MS = 15_000;

@@ -18,7 +18,7 @@ Health must show `stt.ok` and `topics.ok`. If the model is missing: `npm run mod
 
 - **Scripted talk**: open http://localhost:5173, click **Demo**. Runs the real categorizer on a fixed English talk (about 60 s).
 - **Replay**: **Replay…** loads a saved session; recorded mode uses stored topics (no API), recategorize mode re-runs Claude.
-- **Real microphone path without speaking**: reload the page with this `initScript`, then click **Record**. It feeds `public/fixtures/test-speech.wav` (Norwegian, Norwegian, English with pauses) through voice detection, Whisper and Claude:
+- **Real microphone path without speaking**: reload the page with this `initScript`, then click **Record**. It feeds `web/public/fixtures/test-speech.wav` (Norwegian, Norwegian, English with pauses) through voice detection, Whisper and Claude:
 
 ```js
 navigator.mediaDevices.getUserMedia = async () => {

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { CategorizeRequest, CategorizeResponse } from '../../../shared/topics';
+import type { CategorizeRequest, CategorizeResponse } from '@shared/topics';
 import { TopicEngine } from './engine';
 import { emptyTopicState, type Segment } from './types';
 

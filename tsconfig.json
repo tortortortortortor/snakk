@@ -14,7 +14,9 @@
     "isolatedModules": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": ["vite/client", "node"]
+    "types": ["vite/client", "node"],
+    "paths": { "@shared/*": ["./shared/*"] },
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo"
   },
-  "include": ["src", "server", "shared", "vite.config.ts"]
+  "include": ["web/src", "server", "shared", "scripts", "vite.config.ts"]
 }

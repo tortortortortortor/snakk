@@ -17,27 +17,36 @@ npm run capture -- <jobs.json>   # replay a session in headless Chrome: stills, 
 
 ## Layout
 
+```
+web/       the browser app: index.html, public/, src/ (engine, visuals, ui)
+server/    Hono API: transcription and categorization
+shared/    types and schemas used by both (imported as @shared/...)
+fixtures/  recorded sessions, replayed by the tests
+scripts/   model download, headless capture
+docs/      the build log
+```
+
 - `server/` Hono API. `/api/transcribe` (WAV in, text + language out), `/api/topics` (categorize), `/api/health`.
   - `engines/` speech engines behind `TranscribeEngine` (whisper.cpp default, WhisperKit adapter).
   - `claude-cli.ts` categorizer via `claude -p` (no tools/settings/MCP, JSON schema). `topics.ts` API + offline providers, prompt in `prompts/categorize.md`.
 - `shared/topics.ts` zod schema for topic ops; shared by server and client.
-- `src/engine/` everything that is not drawing. Public surface: `src/engine/index.ts` (`useSnakk`, `talkView`, `sectionHops`, types).
+- `web/src/engine/` everything that is not drawing. Public surface: `web/src/engine/index.ts` (`useSnakk`, `talkView`, `sectionHops`, types).
   - `transcript/` `TranscriptSource` + `LocalVadWhisperSource` (Silero VAD in browser, interim + final).
   - `topics/` `TopicEngine` (when to call Claude) and the pure `applyTopicOps` reducer (guardrails, keyword dedupe, `trail` of where the talk went).
   - `session/controller.ts` wires sources, engine, store and recorder. Replay and typed input go through the same entry points.
   - `store.ts` zustand store; `selectors.ts` derived views every visualization uses.
-- `src/visuals/` one folder per visualization, registered in `registry.ts` against the `Visualization` contract in `types.ts`. Lazy-loaded; a view reads the engine and only writes `landKeyword` (if `animatesKeywords`; otherwise the shell lands keywords).
+- `web/src/visuals/` one folder per visualization, registered in `registry.ts` against the `Visualization` contract in `types.ts`. Lazy-loaded; a view reads the engine and only writes `landKeyword` (if `animatesKeywords`; otherwise the shell lands keywords).
   - `bubbles/` `SectionGroup` ray-marches each section as one surface (smooth-union SDF in `sectionShader.ts`, keywords from `keywordAtlas.ts`); layout, simulation, and the `?look=` motion options in `look.ts` (`DEFAULT_LOOK` = Tor's picks). Build the ShaderMaterial imperatively: JSX `uniforms` props get copied and stop updating.
   - `chalkboard/` SVG board: `board.ts` pure layout (fixed serpentine grid, nothing written ever moves), `chalk.ts` hand-drawn paths, one SVG chalk filter.
-- `src/ui/` the shell around any visualization: top bar with the view switcher, captions, controls, debug drawer.
-- `src/architecture.test.ts` enforces the boundaries: the engine imports no rendering code; visuals reach the engine only via its index and never import each other.
-- `fixtures/sessions/` recorded sessions; every file is replayed by `src/engine/topics/fixtures.test.ts`.
+- `web/src/ui/` the shell around any visualization: top bar with the view switcher, captions, controls, debug drawer.
+- `web/src/architecture.test.ts` enforces the boundaries: the engine imports no rendering code; visuals reach the engine only via its index and never import each other.
+- `fixtures/sessions/` recorded sessions; every file is replayed by `web/src/engine/topics/fixtures.test.ts`.
 - `scripts/capture/` headless-Chrome capture of any view at any lecture second (see `jobs.example.json`). Output in `captures/` (git-ignored).
 
 ### Adding a visualization
 
-1. `src/visuals/<name>/index.ts` default-exports a full-screen component that reads `useSnakk` / `talkView` / `sectionHops` from `../../engine`.
-2. Register it in `src/visuals/registry.ts` (set `animatesKeywords`).
+1. `web/src/visuals/<name>/index.ts` default-exports a full-screen component that reads `useSnakk` / `talkView` / `sectionHops` from `../../engine`.
+2. Register it in `web/src/visuals/registry.ts` (set `animatesKeywords`).
 3. Capture it next to the others with `npm run capture` and log it.
 
 ## Conventions

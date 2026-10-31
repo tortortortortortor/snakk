@@ -1,4 +1,4 @@
-import type { CategorizeRequest, CategorizeResponse, HealthResponse } from '../../../shared/topics';
+import type { CategorizeRequest, CategorizeResponse, HealthResponse } from '@shared/topics';
 import { useSnakk } from '../store';
 import { TopicEngine } from '../topics/engine';
 import type { Segment } from '../topics/types';
